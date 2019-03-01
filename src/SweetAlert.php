@@ -27,7 +27,9 @@ class SweetAlert {
         }
 
 
-        session()->flash('sweetalert.json', json_encode($this->params));
+        session([
+                    'sweetalert.json' => json_encode($this->params),
+                ]);
 
         return $this;
     }
