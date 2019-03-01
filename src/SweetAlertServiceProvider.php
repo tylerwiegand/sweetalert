@@ -3,8 +3,7 @@
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 
-class SweetAlertServiceProvider extends ServiceProvider
-{
+class SweetAlertServiceProvider extends ServiceProvider {
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -18,20 +17,18 @@ class SweetAlertServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
-    {
+    public function register() {
         $this->app->singleton('softon.sweetalert', 'Softon\SweetAlert\SweetAlert');
     }
 
 
-    public function boot()
-    {
-        $this->loadViewsFrom(__DIR__.'/views', 'sweetalert');
+    public function boot() {
+        $this->loadViewsFrom(__DIR__ . '/views', 'sweetalert');
 
         $this->publishes([
-            __DIR__.'/views' => base_path('resources/views/vendor/sweetalert'),
-            __DIR__.'/config/sweetalert.php' => config_path('sweetalert.php'),
-        ]);
+                             __DIR__ . '/views'                 => base_path('resources/views/vendor/sweetalert'),
+                             __DIR__ . '/config/sweetalert.php' => config_path('sweetalert.php'),
+                         ]);
     }
 
     /**
@@ -39,8 +36,7 @@ class SweetAlertServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    public function provides()
-    {
+    public function provides() {
         return [
 
         ];
